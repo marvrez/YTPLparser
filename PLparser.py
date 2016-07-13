@@ -6,6 +6,9 @@ import urllib.error
 import urllib.request
 import sys
 import time 
+import threading
+
+start = time.time()
 
 def parse(url):
     final_url = []
@@ -48,3 +51,4 @@ if __name__ == '__main__':
         if "https://" not in url:
             url = "https://" + url
         parse(url) #leggo
+        print ("Elapsed time: %ss" % (time.time()-start) )
